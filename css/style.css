@@ -639,6 +639,16 @@ p:last-child {
   background-position: center;
 }
 
+/* ============================================
+   VII. INSTITUTIONAL LEADERSHIP
+   ============================================ */
+.institutional-bg {
+  background-image: url('../assets/achan_candid_shot.JPG');
+  background-position: right center;
+  background-size: contain;
+  background-color: var(--color-bg);
+}
+
 .cine-grid {
   display: grid;
   grid-template-columns: 1fr;
