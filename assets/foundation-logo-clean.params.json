@@ -1,0 +1,53 @@
+{
+  "tip": [
+    289,
+    628
+  ],
+  "top": [
+    607,
+    281
+  ],
+  "join": [
+    681,
+    396
+  ],
+  "left_apex": [
+    442,
+    475
+  ],
+  "inner": [
+    537,
+    613
+  ],
+  "center": [
+    653,
+    768
+  ],
+  "right_pivot": [
+    737,
+    625
+  ],
+  "right_apex": [
+    936,
+    502
+  ],
+  "right_lower": [
+    1068,
+    643
+  ],
+  "base_right": [
+    793,
+    745
+  ],
+  "base_left": [
+    309,
+    744
+  ],
+  "drop": {
+    "rx": 28,
+    "ry": 30,
+    "attach_dy": -1
+  },
+  "symbol_stroke": 8,
+  "rain_stroke": 10
+}

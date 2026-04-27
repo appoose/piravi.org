@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="200 200 900 700" aria-label="Shaji N Karun Foundation logo">
+<!-- Geometric shapes (triangles + angular forms) -->
+<g fill="none" stroke="#e8e0d4" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M 289 628 L 607 281"/>
+  <path d="M 607 281 L 681 396"/>
+  <path d="M 737 625 L 936 502"/>
+  <path d="M 936 502 L 1068 643"/>
+  <path d="M 1068 643 L 793 745"/>
+  <path d="M 309 744 L 793 745"/>
+  <path d="M 309 744 L 442 475"/>
+  <path d="M 289 628 L 681 396"/>
+  <path d="M 442 475 L 653 768"/>
+  <path d="M 442 475 L 537 613"/>
+  <path d="M 537 613 L 681 396"/>
+  <path d="M 681 396 L 737 625"/>
+  <path d="M 737 625 L 793 745"/>
+  <path d="M 653 768 L 737 625"/>
+  <!-- Teardrop -->
+  <path d="M 289 627 C 286 617 263 608 261 627 C 261 649 265 653 283 658 C 291 649 290 630 289 627 Z"/>
+</g>
+<!-- Rain lines -->
+<g fill="none" stroke="#e8e0d4" stroke-width="10" stroke-linecap="round" opacity="0.7">
+  <path d="M 254 236 L 284 309"/>
+  <path d="M 334 236 L 373 332"/>
+  <path d="M 419 269 L 443 328"/>
+  <path d="M 490 236 L 514 298"/>
+  <path d="M 646 236 L 676 310"/>
+  <path d="M 742 236 L 778 332"/>
+  <path d="M 812 268 L 837 328"/>
+  <path d="M 918 236 L 949 309"/>
+  <path d="M 286 361 L 329 478"/>
+  <path d="M 420 361 L 450 429"/>
+  <path d="M 483 390 L 508 451"/>
+  <path d="M 712 352 L 753 449"/>
+  <path d="M 816 352 L 854 451"/>
+  <path d="M 906 352 L 929 411"/>
+  <path d="M 260 445 L 290 532"/>
+  <path d="M 744 444 L 775 530"/>
+  <path d="M 948 446 L 970 514"/>
+  <path d="M 220 365 L 240 415"/>
+  <path d="M 382 288 L 403 336"/>
+  <path d="M 580 346 L 604 406"/>
+  <path d="M 657 316 L 679 373"/>
+  <path d="M 868 391 L 891 452"/>
+</g>
+<!-- Foundation text -->
+<text x="550" y="830" font-family="'Inter', sans-serif" font-weight="500" font-size="68" fill="#e8e0d4" text-anchor="middle" letter-spacing="8">SHAJI N KARUN</text>
+<text x="550" y="890" font-family="'Inter', sans-serif" font-weight="500" font-size="68" fill="#e8e0d4" text-anchor="middle" letter-spacing="8">FOUNDATION</text>
+<!-- Horizontal bars (from original logo) -->
+<g fill="#e8e0d4">
+  <rect x="770" y="808" width="120" height="6" rx="1"/>
+  <rect x="770" y="824" width="120" height="6" rx="1"/>
+  <rect x="770" y="840" width="120" height="6" rx="1"/>
+  <rect x="770" y="870" width="120" height="6" rx="1"/>
+  <rect x="770" y="886" width="120" height="6" rx="1"/>
+  <rect x="770" y="902" width="120" height="6" rx="1"/>
+</g>
+</svg>
