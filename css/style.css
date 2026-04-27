@@ -208,7 +208,7 @@ p:last-child {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(10, 10, 10, 0.88);
+  background: rgba(10, 10, 10, 0.6);
 }
 
 /* --- Section Number --- */
@@ -406,8 +406,9 @@ p:last-child {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('../assets/achan_side_portrait.webp') 70% 20% / cover no-repeat;
-  background-attachment: fixed;
+  background:
+    url('../assets/achan_side_portrait.webp') right center / contain no-repeat;
+  background-color: var(--color-bg);
 }
 
 .hero-bg::after {
@@ -415,10 +416,16 @@ p:last-child {
   position: absolute;
   inset: 0;
   background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 0.3) 0%,
+    rgba(10, 10, 10, 0.1) 40%,
+    rgba(10, 10, 10, 0.4) 100%
+  ),
+  linear-gradient(
     to bottom,
-    rgba(10, 10, 10, 0.5) 0%,
-    rgba(10, 10, 10, 0.6) 50%,
-    rgba(10, 10, 10, 0.9) 100%
+    rgba(10, 10, 10, 0.4) 0%,
+    rgba(10, 10, 10, 0.2) 50%,
+    rgba(10, 10, 10, 0.85) 100%
   );
 }
 
@@ -538,15 +545,14 @@ p:last-child {
 
 .film-visual {
   position: relative;
-  aspect-ratio: 2.39 / 1;
   overflow: hidden;
   border-radius: 2px;
 }
 
 .film-still {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
   transition: opacity 0.6s ease;
 }
 
@@ -555,7 +561,8 @@ p:last-child {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--color-bg);
   opacity: 0;
   transition: opacity 0.6s ease;
 }
