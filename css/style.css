@@ -644,7 +644,7 @@ p:last-child {
    ============================================ */
 .institutional-bg {
   background-image: url('../assets/achan_candid_shot.JPG');
-  background-position: right center;
+  background-position: left center;
   background-size: contain;
   background-color: var(--color-bg);
 }
