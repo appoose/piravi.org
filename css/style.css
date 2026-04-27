@@ -136,13 +136,51 @@ p:last-child {
   border-width: 0;
 }
 
-/* --- Section Divider --- */
+/* --- Triangle Divider (logo motif) --- */
 .section-divider {
   border: none;
-  width: 80px;
+  background: none;
+  height: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.section-divider::before {
+  content: '';
+  width: 60px;
   height: 1px;
   background: var(--color-divider);
-  margin: 0 auto;
+}
+
+.section-divider::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: var(--color-divider);
+}
+
+/* Triangle icon inside divider — added via HTML inline SVG */
+.divider-triangle {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  opacity: 0.4;
+}
+
+/* --- Decorative Triangle Accents --- */
+.triangle-accent {
+  position: absolute;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.triangle-accent svg {
+  width: 100%;
+  height: 100%;
 }
 
 /* --- Section Base --- */
@@ -392,11 +430,11 @@ p:last-child {
 }
 
 .hero-logo {
-  width: 90px;
+  width: 160px;
   height: auto;
   margin: 0 auto var(--space-sm);
-  border-radius: 6px;
-  opacity: 0.9;
+  border-radius: 8px;
+  filter: brightness(1.1) drop-shadow(0 4px 30px rgba(201, 168, 76, 0.2));
 }
 
 .hero h1 {
@@ -658,11 +696,11 @@ p:last-child {
 }
 
 .footer-logo {
-  width: 60px;
+  width: 100px;
   height: auto;
   margin: 0 auto var(--space-xs);
-  border-radius: 4px;
-  opacity: 0.8;
+  border-radius: 6px;
+  filter: brightness(1.05);
 }
 
 .footer-name {
@@ -751,7 +789,7 @@ p:last-child {
   }
 
   .hero-logo {
-    width: 70px;
+    width: 120px;
   }
 
   .section-number {
@@ -785,6 +823,57 @@ p:last-child {
   html {
     scroll-behavior: auto;
   }
+}
+
+/* --- Triangle Decorative Positions --- */
+.triangle-tl {
+  top: 2rem;
+  left: -2rem;
+  width: clamp(150px, 20vw, 300px);
+  height: clamp(150px, 20vw, 300px);
+}
+
+.triangle-br {
+  bottom: 2rem;
+  right: -2rem;
+  width: clamp(120px, 15vw, 250px);
+  height: clamp(120px, 15vw, 250px);
+}
+
+.triangle-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(200px, 30vw, 500px);
+  height: clamp(200px, 30vw, 500px);
+  opacity: 0.03;
+}
+
+/* Footer triangles */
+.footer-triangles {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: var(--space-sm);
+  opacity: 0.3;
+}
+
+.footer-triangles svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* Rain lines decoration (from logo motif) */
+.rain-accent {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  width: 120px;
+  height: 100px;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* --- Focus Styles --- */
