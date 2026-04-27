@@ -895,8 +895,8 @@ p:last-child {
 }
 
 .gallery-item {
-  width: 140px;
-  height: 100px;
+  width: 280px;
+  height: 200px;
   overflow: hidden;
   border-radius: 2px;
 }
