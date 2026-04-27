@@ -100,6 +100,98 @@
     sectionObserver.observe(section);
   });
 
+  // --- Carousels ---
+  document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
+    var track = carousel.querySelector('.carousel-track');
+    var slides = carousel.querySelectorAll('.carousel-slide');
+    var prevBtn = carousel.querySelector('.carousel-btn--prev');
+    var nextBtn = carousel.querySelector('.carousel-btn--next');
+    var currentIndex = 0;
+    var autoplayInterval;
+
+    function getVisibleCount() {
+      if (window.innerWidth < 768) return 1;
+      if (window.innerWidth < 1024) return 2;
+      return 3;
+    }
+
+    function getMaxIndex() {
+      return Math.max(0, slides.length - getVisibleCount());
+    }
+
+    function updateTrack() {
+      var visibleCount = getVisibleCount();
+      var gap = 8;
+      var containerWidth = carousel.clientWidth - 80; // subtract padding (2.5rem * 2 ≈ 80px)
+      var oneSlide = (containerWidth - gap * (visibleCount - 1)) / visibleCount;
+      var offset = currentIndex * (oneSlide + gap);
+      track.style.transform = 'translateX(-' + offset + 'px)';
+    }
+
+    function goTo(index) {
+      currentIndex = Math.max(0, Math.min(index, getMaxIndex()));
+      updateTrack();
+    }
+
+    function next() {
+      if (currentIndex >= getMaxIndex()) {
+        goTo(0);
+      } else {
+        goTo(currentIndex + 1);
+      }
+    }
+
+    function prev() {
+      if (currentIndex <= 0) {
+        goTo(getMaxIndex());
+      } else {
+        goTo(currentIndex - 1);
+      }
+    }
+
+    nextBtn.addEventListener('click', function () {
+      next();
+      resetAutoplay();
+    });
+
+    prevBtn.addEventListener('click', function () {
+      prev();
+      resetAutoplay();
+    });
+
+    function startAutoplay() {
+      autoplayInterval = setInterval(next, 3500);
+    }
+
+    function resetAutoplay() {
+      clearInterval(autoplayInterval);
+      startAutoplay();
+    }
+
+    // Pause on hover
+    carousel.addEventListener('mouseenter', function () {
+      clearInterval(autoplayInterval);
+    });
+
+    carousel.addEventListener('mouseleave', function () {
+      startAutoplay();
+    });
+
+    // Recalculate on resize
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        if (currentIndex > getMaxIndex()) currentIndex = getMaxIndex();
+        updateTrack();
+      }, 150);
+    });
+
+    // Init
+    updateTrack();
+    if (!reducedMotion) startAutoplay();
+  });
+
   // Initial state
   updateHeader();
 })();
