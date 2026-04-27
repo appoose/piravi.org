@@ -1,0 +1,795 @@
+/* ============================================
+   Shaji N. Karun Foundation — Style Sheet
+   ============================================ */
+
+/* --- Custom Properties --- */
+:root {
+  --color-bg: #0a0a0a;
+  --color-bg-warm: #1a1612;
+  --color-bg-mid: #111111;
+  --color-text: #e8e0d4;
+  --color-text-muted: #9a9088;
+  --color-accent: #c9a84c;
+  --color-accent-dim: rgba(201, 168, 76, 0.12);
+  --color-divider: rgba(201, 168, 76, 0.4);
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+
+  --space-xs: 1rem;
+  --space-sm: 2rem;
+  --space-md: 4rem;
+  --space-lg: 6rem;
+  --space-xl: 8rem;
+
+  --max-text: 720px;
+  --max-content: 1200px;
+
+  --transition: 0.4s ease;
+}
+
+/* --- Reset --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* --- Page Fade In --- */
+body {
+  animation: fadeFromBlack 1.5s ease forwards;
+}
+
+@keyframes fadeFromBlack {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 2rem + 2vw, 4rem);
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 1.5rem + 1.5vw, 3rem);
+  margin-bottom: var(--space-sm);
+}
+
+h3 {
+  font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.8rem);
+  margin-bottom: var(--space-xs);
+}
+
+h4 {
+  font-size: clamp(1.1rem, 1rem + 0.3vw, 1.3rem);
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1.2em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Utility --- */
+.container {
+  width: 90%;
+  max-width: var(--max-content);
+  margin: 0 auto;
+}
+
+.text-column {
+  max-width: var(--max-text);
+  margin: 0 auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* --- Section Divider --- */
+.section-divider {
+  border: none;
+  width: 80px;
+  height: 1px;
+  background: var(--color-divider);
+  margin: 0 auto;
+}
+
+/* --- Section Base --- */
+.section {
+  padding: var(--space-lg) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Section Background Images --- */
+.section-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.88);
+}
+
+/* --- Section Number --- */
+.section-number {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: clamp(4rem, 3rem + 4vw, 8rem);
+  color: var(--color-accent);
+  opacity: 0.12;
+  display: block;
+  text-align: center;
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* --- Scroll Reveal --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  transition: background var(--transition), padding var(--transition);
+}
+
+.site-header.scrolled {
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.6rem 0;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: var(--max-content);
+  margin: 0 auto;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-logo img {
+  height: 40px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.nav-logo span {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  letter-spacing: 0.05em;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color var(--transition);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-accent);
+  transition: width var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-text);
+  margin: 5px 0;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile overlay */
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.97);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-overlay.open {
+  display: flex;
+}
+
+.mobile-nav {
+  list-style: none;
+  text-align: center;
+}
+
+.mobile-nav li {
+  margin: 1.5rem 0;
+}
+
+.mobile-nav a {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-text);
+  letter-spacing: 0.05em;
+  transition: color var(--transition);
+}
+
+.mobile-nav a:hover {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('../assets/achan_side_portrait.webp') 70% center / cover no-repeat;
+  background-attachment: fixed;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.5) 0%,
+    rgba(10, 10, 10, 0.6) 50%,
+    rgba(10, 10, 10, 0.9) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 var(--space-sm);
+}
+
+.hero-logo {
+  width: 90px;
+  height: auto;
+  margin: 0 auto var(--space-sm);
+  border-radius: 6px;
+  opacity: 0.9;
+}
+
+.hero h1 {
+  margin-bottom: 0.5em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-tagline {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.3rem);
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+.scroll-cue svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-text-muted);
+  opacity: 0.6;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* ============================================
+   I. THE ESSENCE
+   ============================================ */
+.essence-bg {
+  background-image: url('../assets/background/piravi_2.jpg');
+  background-position: center 30%;
+}
+
+.essence .drop-cap::first-letter {
+  font-family: var(--font-heading);
+  float: left;
+  font-size: 3.5em;
+  line-height: 0.8;
+  padding-right: 0.1em;
+  padding-top: 0.05em;
+  color: var(--color-accent);
+}
+
+/* ============================================
+   II. PROGRAMS
+   ============================================ */
+.programs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.programs-image {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.programs-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================
+   III. THE ARCHIVE
+   ============================================ */
+.archive-bg {
+  background-image: url('../assets/background/vlcsnap-2011-01-17-16h36m26s73.png');
+  background-position: center;
+}
+
+/* ============================================
+   IV. FILMOGRAPHY
+   ============================================ */
+.filmography {
+  background: var(--color-bg-mid);
+}
+
+.film-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  align-items: center;
+}
+
+.film-card:last-child {
+  margin-bottom: 0;
+}
+
+.film-visual {
+  position: relative;
+  aspect-ratio: 2.39 / 1;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.film-still {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.6s ease;
+}
+
+.film-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.film-visual:hover .film-still {
+  opacity: 0;
+}
+
+.film-visual:hover .film-poster {
+  opacity: 1;
+}
+
+.film-info {
+  padding: var(--space-xs) 0;
+}
+
+.film-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2.2rem);
+  margin-bottom: 0.25rem;
+}
+
+.film-year {
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.film-card.text-only {
+  max-width: var(--max-text);
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.film-card.text-only .film-info {
+  text-align: center;
+}
+
+.docs-bg {
+  background-image: url('../assets/background/MV5BODhjNzU4NjYtNzlkMi00ZmU3LTkzN2EtOGNhZTlkZDcyMTQ1XkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_.jpg');
+  background-position: center 40%;
+}
+
+/* ============================================
+   V. DOCUMENTARIES
+   ============================================ */
+.docs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.docs-grid h3 {
+  color: var(--color-accent);
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
+  margin-bottom: var(--space-xs);
+}
+
+.docs-grid p {
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-family: var(--font-heading);
+  line-height: 1.9;
+}
+
+/* ============================================
+   VI. CINEMATOGRAPHY
+   ============================================ */
+.cine-bg {
+  background-image: url('../assets/background/punwx0S4V2MiGeQwYF3lYhXk4n0.webp');
+  background-position: center;
+}
+
+.cine-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.cine-grid h3 {
+  color: var(--color-accent);
+  margin-bottom: var(--space-xs);
+}
+
+.cine-grid em {
+  font-family: var(--font-heading);
+}
+
+/* ============================================
+   VII. LIVING LEGACY
+   ============================================ */
+.legacy {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.legacy-bg {
+  position: absolute;
+  inset: 0;
+  background: url('../assets/images/shaji-portrait-iffi.jpg') center top / cover no-repeat;
+}
+
+.legacy-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.82);
+}
+
+.legacy-content {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-text);
+  margin: 0 auto;
+}
+
+.legacy-content p {
+  font-family: var(--font-heading);
+  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);
+  line-height: 1.8;
+  font-style: italic;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  background: var(--color-bg);
+  padding: var(--space-md) 0 var(--space-sm);
+  text-align: center;
+  border-top: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.footer-logo {
+  width: 60px;
+  height: auto;
+  margin: 0 auto var(--space-xs);
+  border-radius: 4px;
+  opacity: 0.8;
+}
+
+.footer-name {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.footer-address {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  line-height: 1.8;
+  margin-bottom: var(--space-sm);
+}
+
+.footer-copy {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+/* ============================================
+   RESPONSIVE — Tablet (768px+)
+   ============================================ */
+@media (min-width: 768px) {
+  .hamburger { display: none; }
+
+  .programs-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .film-card {
+    grid-template-columns: 1.2fr 1fr;
+  }
+
+  .film-card:nth-child(even) {
+    grid-template-columns: 1fr 1.2fr;
+  }
+
+  .film-card:nth-child(even) .film-visual {
+    order: 2;
+  }
+
+  .film-card:nth-child(even) .film-info {
+    order: 1;
+    text-align: right;
+  }
+
+  .docs-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .cine-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============================================
+   RESPONSIVE — Desktop (1024px+)
+   ============================================ */
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--space-xl) 0;
+  }
+
+  .film-card {
+    gap: var(--space-md);
+  }
+}
+
+/* ============================================
+   RESPONSIVE — Mobile (<768px)
+   ============================================ */
+@media (max-width: 767px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hero-bg {
+    background-attachment: scroll;
+  }
+
+  .hero-logo {
+    width: 70px;
+  }
+
+  .section-number {
+    font-size: clamp(3rem, 2rem + 4vw, 5rem);
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .scroll-cue {
+    animation: none;
+  }
+
+  .film-still,
+  .film-poster {
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* --- Focus Styles --- */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
