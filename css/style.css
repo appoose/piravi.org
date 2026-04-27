@@ -643,7 +643,7 @@ p:last-child {
    VII. INSTITUTIONAL LEADERSHIP
    ============================================ */
 .institutional-bg {
-  background-image: url('../assets/achan_candid_shot.JPG');
+  background-image: url('../assets/images/shaji-portrait-iffi.jpg');
   background-position: left center;
   background-size: contain;
   background-color: var(--color-bg);
@@ -680,7 +680,7 @@ p:last-child {
 .legacy-bg {
   position: absolute;
   inset: 0;
-  background: url('../assets/images/shaji-portrait-iffi.jpg') right center / contain no-repeat;
+  background: url('../assets/achan_candid_shot.JPG') right center / contain no-repeat;
   background-color: #0a0a0a;
 }
 
