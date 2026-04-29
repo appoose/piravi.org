@@ -14,7 +14,8 @@
   --color-divider: rgba(201, 168, 76, 0.4);
 
   --font-heading: 'Inter', -apple-system, sans-serif;
-  --font-body: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-accent: 'Playfair Display', Georgia, serif;
 
   --space-xs: 1rem;
   --space-sm: 2rem;
@@ -43,10 +44,11 @@ html {
 
 body {
   font-family: var(--font-body);
+  font-weight: 300;
   background: var(--color-bg);
   color: var(--color-text);
-  line-height: 1.7;
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  line-height: 1.8;
+  font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.0625rem);
   overflow-x: hidden;
 }
 
@@ -79,30 +81,32 @@ body {
 /* --- Typography --- */
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
-  font-weight: 900;
-  line-height: 1.2;
+  font-weight: 600;
+  line-height: 1.15;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.12em;
 }
 
 h1 {
-  font-size: clamp(2.2rem, 2rem + 2vw, 4rem);
-  letter-spacing: 0.02em;
+  font-size: clamp(2rem, 1.6rem + 2vw, 3.5rem);
+  letter-spacing: 0.15em;
 }
 
 h2 {
-  font-size: clamp(1.8rem, 1.5rem + 1.5vw, 3rem);
+  font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2.2rem);
   margin-bottom: var(--space-sm);
 }
 
 h3 {
-  font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.8rem);
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.3rem);
+  letter-spacing: 0.15em;
   margin-bottom: var(--space-xs);
 }
 
 h4 {
-  font-size: clamp(1.1rem, 1rem + 0.3vw, 1.3rem);
+  font-size: clamp(0.85rem, 0.8rem + 0.2vw, 1rem);
   color: var(--color-accent);
+  letter-spacing: 0.18em;
   margin-bottom: 0.5rem;
 }
 
@@ -217,6 +221,7 @@ p:last-child {
 .section-number {
   font-family: var(--font-heading);
   font-style: normal;
+  font-weight: 300;
   font-size: clamp(4rem, 3rem + 4vw, 8rem);
   color: var(--color-accent);
   opacity: 0.12;
@@ -282,9 +287,11 @@ p:last-child {
 
 .nav-logo span {
   font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: 0.8rem;
+  font-weight: 400;
   color: var(--color-text);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
 .nav-links {
@@ -294,10 +301,11 @@ p:last-child {
 }
 
 .nav-links a {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 400;
   color: var(--color-text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.18em;
   transition: color var(--transition);
   position: relative;
 }
@@ -380,10 +388,11 @@ p:last-child {
 
 .mobile-nav a {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 400;
   color: var(--color-text);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   transition: color var(--transition);
 }
 
@@ -451,7 +460,7 @@ p:last-child {
 }
 
 .hero-tagline {
-  font-family: var(--font-body);
+  font-family: var(--font-accent);
   font-style: italic;
   font-weight: 400;
   font-size: clamp(1rem, 0.9rem + 0.5vw, 1.3rem);
@@ -495,25 +504,28 @@ p:last-child {
 }
 
 .essence-quote p {
-  font-family: var(--font-body);
+  font-family: var(--font-accent);
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.35rem);
-  line-height: 1.7;
+  font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.25rem);
+  line-height: 1.8;
   color: var(--color-text);
 }
 
 .essence-quote cite {
   display: block;
+  font-family: var(--font-heading);
   font-style: normal;
-  font-size: 0.9rem;
+  font-weight: 400;
+  font-size: 0.75rem;
   color: var(--color-accent);
-  margin-top: 0.5rem;
-  letter-spacing: 0.02em;
+  margin-top: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .essence .drop-cap::first-letter {
-  font-family: var(--font-body);
+  font-family: var(--font-accent);
   font-weight: 400;
   float: left;
   font-size: 3.5em;
@@ -610,14 +622,18 @@ p:last-child {
 
 .film-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 1.2rem + 1vw, 2.2rem);
+  font-weight: 600;
+  font-size: clamp(1.2rem, 1rem + 0.8vw, 1.8rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   margin-bottom: 0.25rem;
 }
 
 .film-year {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 300;
   color: var(--color-accent);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   margin-bottom: 0.75rem;
   display: block;
 }
@@ -655,7 +671,7 @@ p:last-child {
 
 .docs-grid p {
   color: var(--color-text-muted);
-  font-style: italic;
+  font-style: normal;
   font-family: var(--font-body);
   line-height: 1.9;
 }
@@ -690,7 +706,7 @@ p:last-child {
 }
 
 .cine-grid em {
-  font-family: var(--font-heading);
+  font-family: var(--font-accent);
 }
 
 /* ============================================
@@ -728,9 +744,9 @@ p:last-child {
 }
 
 .legacy-content p {
-  font-family: var(--font-body);
-  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);
-  line-height: 1.8;
+  font-family: var(--font-accent);
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
+  line-height: 1.9;
   font-style: italic;
   font-weight: 400;
 }
@@ -754,14 +770,17 @@ p:last-child {
 
 .footer-name {
   font-family: var(--font-heading);
-  font-size: 1rem;
-  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
 
 .footer-address {
   color: var(--color-text-muted);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 300;
   line-height: 1.8;
   margin-bottom: var(--space-sm);
 }
