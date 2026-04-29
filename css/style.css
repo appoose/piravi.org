@@ -14,7 +14,7 @@
   --color-divider: rgba(201, 168, 76, 0.4);
 
   --font-heading: 'Inter', -apple-system, sans-serif;
-  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-body: 'Playfair Display', Georgia, serif;
 
   --space-xs: 1rem;
   --space-sm: 2rem;
@@ -79,7 +79,7 @@ body {
 /* --- Typography --- */
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1.2;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -451,9 +451,9 @@ p:last-child {
 }
 
 .hero-tagline {
-  font-family: var(--font-heading);
-  font-style: normal;
-  font-weight: 300;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 400;
   font-size: clamp(1rem, 0.9rem + 0.5vw, 1.3rem);
   color: var(--color-text-muted);
   margin-top: 0.5rem;
@@ -495,7 +495,7 @@ p:last-child {
 }
 
 .essence-quote p {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-style: italic;
   font-weight: 400;
   font-size: clamp(1.1rem, 1rem + 0.4vw, 1.35rem);
@@ -513,8 +513,8 @@ p:last-child {
 }
 
 .essence .drop-cap::first-letter {
-  font-family: var(--font-heading);
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-weight: 400;
   float: left;
   font-size: 3.5em;
   line-height: 0.8;
@@ -655,7 +655,7 @@ p:last-child {
 
 .docs-grid p {
   color: var(--color-text-muted);
-  font-style: normal;
+  font-style: italic;
   font-family: var(--font-body);
   line-height: 1.9;
 }
@@ -728,11 +728,11 @@ p:last-child {
 }
 
 .legacy-content p {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-size: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);
   line-height: 1.8;
-  font-style: normal;
-  font-weight: 300;
+  font-style: italic;
+  font-weight: 400;
 }
 
 /* ============================================
