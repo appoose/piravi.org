@@ -13,9 +13,9 @@
   --color-accent-dim: rgba(201, 168, 76, 0.12);
   --color-divider: rgba(201, 168, 76, 0.4);
 
-  --font-heading: 'Noto Serif Display', Georgia, serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'DM Sans', -apple-system, sans-serif;
-  --font-accent: 'Noto Serif Display', Georgia, serif;
+  --font-accent: 'Playfair Display', Georgia, serif;
 
   --space-xs: 1rem;
   --space-sm: 2rem;
