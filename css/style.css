@@ -13,7 +13,7 @@
   --color-accent-dim: rgba(201, 168, 76, 0.12);
   --color-divider: rgba(201, 168, 76, 0.4);
 
-  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-heading: 'Inter', -apple-system, sans-serif;
   --font-body: 'Inter', -apple-system, sans-serif;
 
   --space-xs: 1rem;
@@ -79,8 +79,10 @@ body {
 /* --- Typography --- */
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 h1 {
@@ -214,7 +216,7 @@ p:last-child {
 /* --- Section Number --- */
 .section-number {
   font-family: var(--font-heading);
-  font-style: italic;
+  font-style: normal;
   font-size: clamp(4rem, 3rem + 4vw, 8rem);
   color: var(--color-accent);
   opacity: 0.12;
@@ -379,6 +381,7 @@ p:last-child {
 .mobile-nav a {
   font-family: var(--font-heading);
   font-size: 1.5rem;
+  font-weight: 600;
   color: var(--color-text);
   letter-spacing: 0.05em;
   transition: color var(--transition);
@@ -449,7 +452,8 @@ p:last-child {
 
 .hero-tagline {
   font-family: var(--font-heading);
-  font-style: italic;
+  font-style: normal;
+  font-weight: 300;
   font-size: clamp(1rem, 0.9rem + 0.5vw, 1.3rem);
   color: var(--color-text-muted);
   margin-top: 0.5rem;
@@ -493,6 +497,7 @@ p:last-child {
 .essence-quote p {
   font-family: var(--font-heading);
   font-style: italic;
+  font-weight: 400;
   font-size: clamp(1.1rem, 1rem + 0.4vw, 1.35rem);
   line-height: 1.7;
   color: var(--color-text);
@@ -509,6 +514,7 @@ p:last-child {
 
 .essence .drop-cap::first-letter {
   font-family: var(--font-heading);
+  font-weight: 700;
   float: left;
   font-size: 3.5em;
   line-height: 0.8;
@@ -649,8 +655,8 @@ p:last-child {
 
 .docs-grid p {
   color: var(--color-text-muted);
-  font-style: italic;
-  font-family: var(--font-heading);
+  font-style: normal;
+  font-family: var(--font-body);
   line-height: 1.9;
 }
 
@@ -725,7 +731,8 @@ p:last-child {
   font-family: var(--font-heading);
   font-size: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);
   line-height: 1.8;
-  font-style: italic;
+  font-style: normal;
+  font-weight: 300;
 }
 
 /* ============================================
